@@ -1,0 +1,57 @@
+<header class="container ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top " id="navbar">
+        <div class="container justify-content-between">
+            <div>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand ml-5 text-center" routerLink="/index">
+                    <img src="https://test365.vn/templates/as002057/images/logo.png" alt=""
+                        style="width:100px; margin-left: 20px"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav" style="flex-grow: 0;">
+                <ul class="navbar-nav m-auto">
+                    <!-- <li class="nav-item ">
+                        <a class="nav-link" routerLink='/index'>Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/intro']" routerLinkActive="router-link-active">About</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/feedback']" routerLinkActive="router-link-active">Feed
+                            Back</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active">
+                            Contact</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{user.displayName}}
+                        </a>
+                        <div class="dropdown-menu bg-light lg" aria-labelledby="navbarDropdown">
+                            <!-- <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="router-link-active">Log
+                                In</a>
+                            <a class="dropdown-item" [routerLink]="['/signin']"
+                                routerLinkActive="router-link-active">Sign In</a> -->
+                            <a class="dropdown-item" [routerLink]="['/changepassword']"
+                                routerLinkActive="router-link-active">
+                                Change
+                                Password</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" [routerLink]="['/user']"
+                                routerLinkActive="router-link-active">Update
+                                Infomation</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" (click)="logout()">Log out</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

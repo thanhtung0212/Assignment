@@ -1,0 +1,81 @@
+.font{
+    font-family: 'Open Sans', Arial, serif
+}
+.bg{
+    // background: url(' ')no-repeat center;
+    height: 100vh;
+}
+.lg{
+    font-weight: bold;
+    color: #b40606;
+    background-attachment: fixed;
+}
+.carousel-item > img{
+    height: 70vh;
+}
+.card >p>img{
+    width: 62px;
+height: 62px;
+
+}
+.card >p{
+    margin-top: 12px
+}
+.card-body > ul >li {
+    text-align: justify
+}
+.card{
+    height: 422px;
+}
+.roll{
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    float: right
+}
+.caption{
+    padding-top: 200px;
+}
+.ipsearch{
+width: 50%;
+border-radius: 5px;
+border: 1px solid rgb(199, 197, 197) ;
+height: 50px;
+}
+.btnsearch{
+    background-color: #b40606;
+    color: #ffffff;
+}
+
+.btnselect > span{
+    float: left;
+}
+.btnselect{
+height: 40px;
+}
+.title{
+    color: #b40606;
+    margin-top: 10px;
+}
+.card{
+    border: 2px solid #b40606;
+    // height: 300px;
+}
+.logo > img{
+    width: 200px;
+    height: 200px;
+}
+.subject{
+    border: 2px solid #b40606;
+height: 350px;
+font-size: 20px;
+}
+.subject:hover{
+    box-shadow: 0 0 13px #888888; 
+}
+.subject>a:hover{
+    color: #1890ff;
+}
+.subject >a{
+    color: #000000;
+}

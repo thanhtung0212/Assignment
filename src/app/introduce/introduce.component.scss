@@ -1,0 +1,268 @@
+.bg{
+    background: url('https://demo.w3layouts.com/demos_new/template_demo/20-10-2017/c_resume-demo_Free/760142481/web/images/ban6666.jpg') no-repeat -194px 0px;;
+    background-position: center;
+    background-attachment: fixed;
+    // height: 70vh;
+    background-size: cover;
+
+}
+.bg2{
+    background: url('https://demo.w3layouts.com/demos_new/template_demo/20-10-2017/c_resume-demo_Free/760142481/web/images/dott.png')
+
+}
+.add{
+    padding-bottom: 100px
+}
+.pd{
+    padding-top: 9em;
+}
+.info {
+    display: flex;
+    list-style: none;
+    padding: 0
+}
+.info >li{
+    width: 30%
+}
+.info > li >span{
+    color: #d9edf7;
+}
+.info2{
+    margin-right: 15px;
+    list-style: none;
+    color: #ffffff
+}
+.info3 >ul{
+    margin-bottom: 10px
+}
+.unline{
+    border-top: 2px dotted #00bcd4;
+}
+.unline >li{
+    margin-top: 20px
+}
+.card1{
+    border: 5px solid rgba(238, 238, 238, 0.53);
+    width: 300px;
+    height: 300px;
+    // padding: 63px;
+    margin: 0 auto 
+}
+.avt >img{
+    width: 133px;
+    height: 133px;
+    border-radius: 50%;
+    // margin-left: 10px;
+    display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 16px
+}
+.card1>h3{
+    text-align: center;
+    color: #ffffff;
+}
+.card1 > p{
+    text-align: center;
+    color: #ffc53e;
+}
+.about{
+    border: 2px solid #ffb900;
+    display: flex;
+}
+.about1{
+    margin: auto;
+
+    width: 30,333%;
+}
+.about1 >h3{
+    color: #fdac14;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    letter-spacing: 2px;
+    font-size: 2em;
+    margin-top: 6px
+}
+.about1 >h5{
+    color: #00bcd4;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.3em
+}
+h3{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    letter-spacing: 2px;
+}
+.lg1 >h3{
+    color: #fdac14;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin: 20px 0px
+}
+.lg1 >p{
+    font-size: 1em;
+    color: #999;
+    margin: 1em 0;
+    margin: 16px 0px
+}
+.btn{
+    background-color: #f9a300;
+    color: #ffffff
+}
+.container1 {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay1 {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(16, 16, 16, 0.47);
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  .container1:hover .overlay1 {
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .text1 {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+//   slide2
+.container2 {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image2 {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(16, 16, 16, 0.47);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .container2:hover .overlay2 {
+    width: 100%;
+  }
+  
+  .text2 {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .container3 {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image3 {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(16, 16, 16, 0.47);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .container3:hover .overlay3 {
+    height: 100%;
+  }
+  
+  .text3 {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .container4 {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image4 {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(16, 16, 16, 0.47);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .container4:hover .overlay4 {
+    height: 100%;
+  }
+  
+  .text4 {
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .dt{
+      margin: 6px
+  }

@@ -1,0 +1,32 @@
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+ 
+  .ex{
+      min-height: 80vh;
+  }
+  .card-body{
+    padding: 1px 0px 0px 0px;
+    margin: 10px;
+  }
+  
+  
+  .sticky {
+    position: fixed;
+    top: 10%;
+    right: 25%;
+    width: 40%;
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }

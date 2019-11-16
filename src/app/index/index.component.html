@@ -1,0 +1,122 @@
+<navigation>
+</navigation>
+<!-- Header -->
+<div class="font mt-5 mt-5 pt-5">
+    <!-- <div class="bg"
+        style="background: url('https://demo.w3layouts.com/demos_new/template_demo/26-03-2019/aegis_demo_Free/1054937215/web/images/banner1.jpg') no-repeat center;max-width: 100%;">
+        <div class="container">
+            <div class="row tex-center img-responsive">
+                <div class="col-md-7">
+                    <div class="caption">
+                        <h1 class="lg">FIND THE BEST COURSE FOR YOU</h1>
+                        <div class="input-group mb-3">
+                            <input type="text" class="ipsearch" placeholder="   Course search . . ."
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btnsearch">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Body -->
+    <div class="container mt-5">
+        <h3 class=" mb-5 text-center" style="color: #cb2036;">Vui lòng chọn môn thi ở dưới</h3>
+        <div class="row m-auto home">
+            <div class="card subject m-3 logo col-md-3 text-center " style="width: 18rem;"
+                *ngFor="let item of list  | paginate:config">
+                <a [routerLink]="['/index',item.Id]" routerLinkActive="router-link-active">
+                    <img src=" {{item.Logo}}" class="card-img-top" alt="..." style="max-width: 100%;margin: auto;">
+                    {{item.Name}}
+                </a>
+
+            </div>
+        </div>
+
+        <div class="text-center ">
+            <div class="float-left">
+                Showing {{config.currentPage}} of {{subject.length/config.itemsPerPage | number:"1.0-0" }}
+            </div>
+            <div class="mt-2">
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Detail -->
+    <div class="text-center" style="background-image: url('https://test365.vn/templates/as002057/images/bg.row5.png');">
+        <div class=" container text-center">
+            <div class="pt-5">
+                <h5 style="color: white">NHỮNG LỢI ÍCH BẠN CÓ KHI SỬ DỤNG HỆ THỐNG CỦA CHÚNG TÔI</h5>
+            </div>
+            <div>
+                <p style="color: #cb2036">==================================</p>
+            </div>
+            <div class="row ">
+                <div class="col-md-4 pb-3">
+                    <div class="card">
+                        <p class="text-center">
+                            <img src="https://test365.vn/images/sampledata/asimages/ico.monitoring.png"
+                                class="card-img-top" alt="..." style="max-width: 100%">
+                        </p>
+
+                        <div class="card-body">
+                            <h5>Hiệu quả</h5>
+                            <ul>
+                                <li>Kho câu hỏi phủ kín các kiến thức cần trang bị được tích luỹ và tái sử dụng nhiều
+                                    lần trở thành kho kiến thức chuyên môn nghiệp vụ của doanh nghiệp</li>
+                                <li>Sơ loại ứng viên trước khi vào vòng phỏng vấn, tiết kiệm chi phí tuyển dụng</li>
+                                <li>Đào tạo nhân viên thông qua các bài test, tạo ra văn hoá bồi dưỡng kiến thức và sát
+                                    hạch liên tục</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pb-3">
+                    <div class="card">
+                        <p class="">
+                            <img src="https://test365.vn/images/sampledata/asimages/ico.optimization.png"
+                                class="card-img-top" alt="...">
+                        </p>
+                        <div class="card-body">
+                            <h5>NHANH CHÓNG</h5>
+                            <ul>
+                                <li>Mọi thứ đều thực hiện online, không cần giấy bút</li>
+                                <li>Công cụ trộn đề, sinh đề, giao đề thi cho thí sinh hoàn toàn tự động, 5 phút để tạo
+                                    xong một đợt thi cho hàng nghìn người</li>
+                                <li>Chấm thi tự động, chính xác tuyệt đối, biết kết quả ngay sau khi hoàn thành bài thi
+                                </li>
+                                <li>Giao diện đơn giản trực quan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pb-3">
+                    <div class="card">
+                        <p>
+                            <img src="https://test365.vn/images/sampledata/asimages/ico.copywriting.png"
+                                class="card-img-top" alt="...">
+                        </p>
+                        <div class="card-body">
+                            <h5>TIẾT KIỆM CHI PHÍ</h5>
+                            <ul>
+                                <li>Không cần đầu tư phần cứng, phần mềm, hệ thống mạng</li>
+                                <li>Không cần nhân sự vận hành</li>
+                                <li>Không cần nhân sự ra đề, chấm thi</li>
+                                <li>Không cần giấy bút, in ấn, lưu trữ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<tp-footer>
+</tp-footer>

@@ -1,0 +1,60 @@
+<navigation>
+</navigation>
+<div class="bg mt-5" style="background-image: url(https://demo.w3layouts.com/demos_new/22-02-2017/elegant_feedback_form-demo_Free/1761240909/web/images/bg2.jpg);
+    max-width: 100%;">
+    <div class="text-center pt-5">
+        <h1 style="color: #fff">FEEDBACK FORM</h1>
+    </div>
+    <div class="container pb-5">
+        <div class="row">
+            <div class="card col-md-6 " style="background-color:rgba(1, 14, 21, 0.62);">
+                <div class="container ">
+                    <form action="">
+                        <div class="ans mt-3">
+                            <p> Please help us to serve you better by taking a couple of minutes.</p>
+                        </div>
+                        <div>
+                            <div class="ques">
+                                <h2>How satisfied were you with our Product/Service?</h2>
+                            </div>
+                            <ul class="chose mt-3">
+                                <li><input type="radio" name="view" id="excellent">
+                                    <label for="excellent">Excellent</label>
+                                    <div class="check w3"></div>
+                                </li>
+                                <li><input type="radio" name="view" id="good" checked="checked">
+                                    <label for="good"> Good</label>
+                                    <div class="check w3ls"></div>
+                                </li>
+                                <li><input type="radio" name="view" id="neutral">
+                                    <label for="neutral">Neutral</label>
+                                    <div class="check wthree"></div>
+                                </li>
+                                <li><input type="radio" name="view" id="poor">
+                                    <label for="poor">Poor</label>
+                                    <div class="check w3_agileits"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ques m-2">
+                            <h2>If you have specific feedback, please write to us...</h2>
+                        </div>
+                        <div class="add">
+                            <textarea nz-input placeholder="Additional comments" [(ngModel)]="value"
+                                [nzAutosize]="{ minRows: 5, maxRows: 5 }"
+                                [ngModelOptions]="{standalone: true}"></textarea>
+                            <div class="add mt-2 mb-2">
+                                <input class="name" type="text" name="" id="" placeholder="Your Name">
+                                <input class="email" type="text" name="" id="" placeholder="Your Email"><br>
+                            </div>
+                            <input class="submit" type="submit" name="" id="" value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<tp-footer>
+
+</tp-footer>

@@ -1,0 +1,36 @@
+.nav-item{
+    margin: 0px 15px ;
+    }
+    
+    .lg > a{
+        //  color: #ffffff;
+      color: rgb(180, 6, 6) !important
+    
+    }
+     .nav-link-icon{
+       color:gray;
+       font-size: 18px;
+       margin-right: 10px
+     }
+     .nav-link-icon> i{
+       margin-right: 6px;
+     }
+     .nav-link-inner--text {
+       font-size: 15px
+     }
+    //  .navbar-nav{
+    //    flex-direction: row;
+    //  }
+     .bg-dark{
+         font-family: 'Open Sans', Arial, serif;
+     }
+     .nav-link{
+         font-size: 18px;
+      color: rgb(180, 6, 6) !important
+     }
+     .fa{
+       padding: 10px;
+     }
+     .nav-link-icon :hover{
+       color: #ffffff;
+     }

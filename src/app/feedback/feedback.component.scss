@@ -1,0 +1,52 @@
+.ans{
+    color: #e6cfcf;
+    font-size: 1.2em
+}
+.ques >h2{
+    font-size: 1.1em;
+    color: #1ec8e9;
+}
+.chose{
+    list-style: none;
+
+}
+.chose > li >label{
+    display: inline-block;
+    margin-left: 20px;
+    color: #e6cfcf;
+    font-size: 1em
+}
+.card{
+    // max-width: 40%;
+    margin: auto
+}
+textarea{
+background-color: rgba(16, 16, 16, 0.47);
+height: 7em;
+border: 1px solid  #696867;
+color: #fff
+
+}
+.add >input{
+background-color: rgba(16, 16, 16, 0.47);
+border: 1px solid  #696867;
+border-radius: 5px;
+}
+.name{
+width: 42%;
+margin-right: 10px;
+height: 40px;
+}
+.email{
+    width: 43%;
+height: 40px;
+}
+.submit{
+    background-color: rgba(16, 16, 16, 0.47);
+border: 1px solid  #696867;
+width: 30%;
+border-radius: 5px;
+color: #fff;
+height: 40px;
+margin: 10px
+}

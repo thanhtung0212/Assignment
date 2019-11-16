@@ -1,0 +1,38 @@
+.info{
+    color: gray;
+    margin: 30px  0px 16px;
+  }
+  .wrapper {
+    width: 240px;
+  }
+
+  button {
+    margin-bottom: 12px;
+  }
+  .fa{
+    padding: 10px;
+  }
+  .nav-link-icon :hover{
+    color: #ffffff;
+  }
+  .nav-link-icon{
+    color:gray;
+    font-size: 18px;
+    margin-right: 10px
+  }
+  .nav-link-icon> i{
+    margin-right: 6px;
+  }
+  .nav-link-inner--text {
+    font-size: 15px
+  }
+ //  .navbar-nav{
+ //    flex-direction: row;
+ //  }
+  .bg-dark{
+      font-family: 'Open Sans', Arial, serif;
+  }
+  .nav-link{
+      font-size: 18px;
+   color: rgb(180, 6, 6) !important
+  }

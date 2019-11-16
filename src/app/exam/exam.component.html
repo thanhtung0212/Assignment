@@ -1,0 +1,66 @@
+<navigation>
+</navigation>
+
+<div class="container ex mt-5 pt-5">
+    <div class="text-center ">
+        <h1 style="color: #b40606">EXAM ONLINE 2019</h1>
+    </div>
+    <div class="card mb-3 " style="border: 2px solid #b40606;background: #333333;color: gray;" id="myHeader">
+        <div class="card-header d-flex justify-content-between ">
+            <p class="m-0" style="font-weight: bold;">Funny Exam</p>
+            <div class="d-flex" style='margin:0px 5px '>
+                <i class="fa fa-clock-o mr-2" style="font-size:36px"></i>
+                <span class="" id="h" style="color: #b40606;">h</span> :
+                <span class="" id="m" style="color: #b40606;">m</span> :
+                <span class="" id="s" style="color: #b40606;">s</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <button class="btn btn-success" (click)="result()">Start</button> -->
+    <div *ngIf="isEdit">
+
+        <div class="card mb-5" *ngFor="let list of list" style="position: inherit;">
+            <div class="card-header d-flex justify-content-between">
+                <p>{{list.Text }}</p>
+            </div>
+            <div class="card-body">
+                <!-- <label class="container">{{item.Text}}
+                    <input type="checkbox" name="radio">
+                    <span class="checkmark"></span>
+                </label> -->
+                <!-- <div class="radio">
+                    <label><input type="radio" name="optradio" checked>{{item.Text}}</label>
+                </div> -->
+                <!-- <div class="checkbox">
+                    <label>
+                        <input (change)="onChoose(item.Id, list.Id)" class="mr-1" type="checkbox" value="PHP">
+                        {{ item.Text}}
+                    </label>
+                </div> -->
+                <nz-radio-group *ngFor="let item of list.Answers" [(ngModel)]="list._answerId">
+                    <label nz-radio [nzValue]="item.Id" (ngModelChange)="onChoose(item.Id, list.Id)"
+                        [ngStyle]="style">{{item.Text}}</label>
+                </nz-radio-group>
+            </div>
+
+        </div>
+    </div>
+    <button class="btn m-3 {{isEdit? 'btn-danger': 'btn-success'}}" (click)="isEdit? stop() :
+    start()"> {{isEdit? 'Ket thuc va xem ket qua' : 'Bat Dau'}}
+    </button>
+    <button class="btn btn-danger" (click)="submit()">Ket thuc</button>
+    <!-- <div class="row mt-3">
+        <div class="col-md-4">
+            Showing {{config.currentPage}} of {{list.length/config.itemsPerPage | number:"1.0-0" }}
+        </div>
+        <div class="col-md-8">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        </div>
+    </div> -->
+</div>
+
+<tp-footer>
+
+</tp-footer>
