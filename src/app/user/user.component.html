@@ -1,58 +1,40 @@
 <navigation></navigation>
-<div class="container  pt-5" style="height: 80vh;">
+<div class="container d-flex flex-column align-items-center justify-content-center" style="height: 80vh;">
 
     <h1 class="header">CẬP NHẬT THÔNG TIN SINH VIÊN</h1>
-    <div class="row m-auto mt-4">
-        <div class="card mb-3 m-auto">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img class="card-img-top image" [src]="user.photoURL" *ngIf="user.photoURL" alt="User image" />
-                    <img class="card-img-top image" src="https://via.placeholder.com/400x300" *ngIf="!user.photoURL"
-                        alt="User image" />
-                </div>
-                <div class="col-md-8 m-auto">
-                    <div class="card-body mt-4">
-                        <ul style="list-style: none;">
-                            <li>
-                                <ul class="info">
-                                    <li class="info2">
-                                        <h5>Họ Và Tên:</h5>
-                                    </li>
-                                    <li>
-                                        <h5>{{ user.displayName }}</h5>
-                                    </li>
-                                </ul>
-                                <ul class="info">
-                                    <li class="info2">
-                                        <h5>MSSV:</h5>
-                                    </li>
-                                    <li>
-                                        <h5>{{ user.studentId }}</h5>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form [formGroup]="profileForm">
-                            <div class="form-group">
-                                <label>Họ Và Tên:</label>
-                                <input type="text" formControlName="name" class="form-control" required />
-                                <label>MSSV</label>
-                                <input type="text" formControlName="studentId" class="form-control" required />
-                            </div>
-                        </form>
-                        <div class="text-center">
-                            <p style="color: red;" id="result"></p>
-                            <button type="submit" (click)="save(profileForm.value)" class="btn btn-primary mr-3">
-                                Lưu
-                            </button>
-                            <button type="submit" [routerLink]="['/index']" routerLinkActive="router-link-active"
-                                class="btn btn-primary">
-                                Chọn Môn Thi
-                            </button>
-                        </div>
-
+    <div class="my-3 mx-auto" style="width: 100%; max-width: 400px;">
+        <div class=" card w-100">
+            <div class="card-body mt-4">
+                <div *ngIf="user.studentId">
+                    <div class="d-flex">
+                        <p class="col-4">Họ Và Tên:</p>
+                        <p class="col-8">{{ user.displayName }}</p>
+                    </div>
+                    <div class="d-flex">
+                        <p class="col-4">MSSV:</p>
+                        <p class="col-8">{{ user.studentId }}</p>
                     </div>
                 </div>
+                <form *ngIf="!user.studentId" [formGroup]="profileForm">
+                    <div class="form-group">
+                        <label>Họ Và Tên:</label>
+                        <input type="text" formControlName="name" class="form-control" required />
+                        <label>MSSV</label>
+                        <input type="text" formControlName="studentId" class="form-control" required />
+                    </div>
+                </form>
+                <div class="text-center">
+                    <p style="color: red;" id="result"></p>
+                    <button *ngIf="!user.studentId" type="submit" (click)="save(profileForm.value)"
+                        class="btn btn-primary mr-3">
+                        Lưu
+                    </button>
+                    <button *ngIf="user.studentId" type="submit" [routerLink]="['/index']"
+                        routerLinkActive="router-link-active" class="btn btn-primary">
+                        Chọn Môn Thi
+                    </button>
+                </div>
+
             </div>
         </div>
 

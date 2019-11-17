@@ -31,6 +31,8 @@ import { UserResolver } from './user/user.resolver';
 import { UserComponent } from './user/user.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
+import { ResetpwComponent } from './resetpw/resetpw.component';
+import { UpdateComponent } from './update/update.component';
 
 
 
@@ -42,6 +44,8 @@ registerLocaleData(vi)
     UserComponent,
     NavigationComponent,
     FooterComponent,
+    ResetpwComponent,
+    UpdateComponent,
 
   ],
   imports: [
@@ -60,10 +64,9 @@ registerLocaleData(vi)
       // { path: 'feedback', component: FeedbackComponent },
       // { path: 'intro', component: IntroduceComponent },
       // { path: 'contact', component: ContactComponent },
-
-      { path: '', component: LoginComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'index', component: IndexComponent, resolve: { data: UserResolver } },
-      { path: 'login', component: LoginComponent },
+      { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
       { path: 'signin', component: SigninComponent },
       { path: 'changepassword', component: ChangepasswordComponent },
       // { path: 'changepassword', component: ChangepasswordComponent, resolve: { data: UserResolver } },
@@ -71,6 +74,8 @@ registerLocaleData(vi)
       { path: 'index/:subjectId', component: ExamComponent, resolve: { data: UserResolver } },
 
       { path: 'user', component: UserComponent, resolve: { data: UserResolver } },
+      { path: 'update', component: UpdateComponent, resolve: { data: UserResolver } },
+      // { path: 'resetpassword', component: ResetpwComponent },
 
 
       // { path: '', component: IndexComponent },

@@ -9,6 +9,7 @@ import { UserService } from '../core/user.service';
 import { User } from '../core/user.model';
 import { FormBuilder } from '@angular/forms';
 import * as firebase from 'firebase/app';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-index',
@@ -52,20 +53,28 @@ export class IndexComponent implements OnInit {
     })
 
     this.config = {
-      itemsPerPage: 5,
+      itemsPerPage: 4,
       currentPage: 1,
       totalItems: this.list
     }
-
-
   }
+
+  checkTime(start_time, end_time) {
+    const from = moment(start_time, 'DD/MM/YYYY HH:mm').unix()
+    const to = moment(end_time, 'DD/MM/YYYY HH:mm').unix()
+    const current = moment().unix()
+    if (current >= from && current <= to) {
+      return true
+    }
+    return false
+  }
+
   getData() {
     return this.http.get('../../assets/Subjects.json')
 
   }
   pageChanged(event) {
     this.config.currentPage = event;
-
   }
 
 }

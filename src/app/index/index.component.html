@@ -26,17 +26,24 @@
     <div class="container mt-5">
         <h3 class=" mb-5 text-center" style="color: #cb2036;">Vui lòng chọn môn thi ở dưới</h3>
         <div class="row m-auto home">
-            <div class="card subject m-3 logo col-md-3 text-center " style="width: 18rem;"
-                *ngFor="let item of list  | paginate:config">
-                <a [routerLink]="['/index',item.Id]" routerLinkActive="router-link-active">
-                    <img src=" {{item.Logo}}" class="card-img-top" alt="..." style="max-width: 100%;margin: auto;">
-                    {{item.Name}}
-                </a>
+            <div class="col-md-3 px-1 py-5" style="width: 18rem;" *ngFor="let item of list  | paginate:config">
+                <div class="card subject logo text-center p-3">
+                    <a *ngIf="checkTime(item.start_time, item.end_time)" [routerLink]="['/index',item.Id]"
+                        routerLinkActive="router-link-active">
+                        <img src=" {{item.Logo}}" class="card-img-top" alt="..." style="max-width: 100%;margin: auto;">
+                        {{item.Name}}
+                    </a>
+                    <div *ngIf="!checkTime(item.start_time, item.end_time)" class="disabled-subject">
+                        <div class="description d-flex align-items-center justify-content-center">Chưa đến giờ thi</div>
+                        <img src=" {{item.Logo}}" class="card-img-top" alt="..." style="max-width: 100%;margin: auto;">
+                        {{item.Name}}
+                    </div>
+                </div>
 
             </div>
         </div>
 
-        <div class="text-center ">
+        <div class="text-center">
             <div class="float-left">
                 Showing {{config.currentPage}} of {{subject.length/config.itemsPerPage | number:"1.0-0" }}
             </div>

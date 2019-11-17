@@ -1,0 +1,36 @@
+<navigation></navigation>
+<div class="container d-flex flex-column align-items-center justify-content-center" style="height: 80vh;">
+
+    <h1 class="header">CẬP NHẬT THÔNG TIN SINH VIÊN</h1>
+    <div class="my-3 mx-auto" style="width: 100%; max-width: 400px;">
+        <div class=" card w-100">
+            <div class="card-body mt-4">
+                <form [formGroup]="profileForm">
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label>Họ Và Tên:</label>
+                            <input value="{{ user.displayName }}" type="text" formControlName="name"
+                                class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label>MSSV</label>
+                            <input value="{{ user.studentId }}" type="text" formControlName="studentId"
+                                class="form-control" required />
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <p style="color: red;" id="result"></p>
+                    <button type="submit" (click)="save(profileForm.value)" class="btn btn-primary mr-3">
+                        Lưu
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<tp-footer></tp-footer>

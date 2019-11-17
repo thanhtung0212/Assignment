@@ -3,7 +3,7 @@
 
 <div class="container ex mt-5 pt-5">
     <div class="text-center ">
-        <h1 style="color: #b40606">EXAM ONLINE 2019</h1>
+        <h1 style="color: #b40606">EXAM ONLINE</h1>
     </div>
     <div class="card mb-3 " style="border: 2px solid #b40606;background: #333333;color: gray;" id="myHeader">
         <div class="card-header d-flex justify-content-between ">
@@ -14,6 +14,7 @@
                 <span class="" id="m" style="color: #b40606;">m</span> :
                 <span class="" id="s" style="color: #b40606;">s</span>
             </div>
+            <div>{{result.answered}}/{{list && list.length}}</div>
         </div>
     </div>
 
@@ -39,18 +40,17 @@
                         {{ item.Text}}
                     </label>
                 </div> -->
-                <nz-radio-group *ngFor="let item of list.Answers" [(ngModel)]="list._answerId">
-                    <label nz-radio [nzValue]="item.Id" (ngModelChange)="onChoose(item.Id, list.Id)"
-                        [ngStyle]="style">{{item.Text}}</label>
+                <nz-radio-group *ngFor="let item of list.Answers" (ngModelChange)="onChoose(item.Id, list.Id)"
+                    [(ngModel)]="list._answerId">
+                    <label nz-radio [nzValue]="item.Id" [ngStyle]="style">{{item.Text}}</label>
                 </nz-radio-group>
             </div>
 
         </div>
     </div>
-    <button class="btn m-3 {{isEdit? 'btn-danger': 'btn-success'}}" (click)="isEdit? stop() :
-    start()"> {{isEdit? 'Ket thuc va xem ket qua' : 'Bat Dau'}}
+    <button class="btn m-3 {{isEdit? 'btn-danger': 'btn-success'}}" (click)="isEdit? submit() :
+    start()"> {{isEdit? 'Ket thuc' : 'Bat Dau'}}
     </button>
-    <button class="btn btn-danger" (click)="submit()">Ket thuc</button>
     <!-- <div class="row mt-3">
         <div class="col-md-4">
             Showing {{config.currentPage}} of {{list.length/config.itemsPerPage | number:"1.0-0" }}
@@ -59,6 +59,16 @@
             <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
         </div>
     </div> -->
+
+    <nz-modal [(nzVisible)]="isSubmitted" [nzFooter]="modalFooter" (nzOnCancel)="onRedirect()">
+        <nz-result nzStatus="success" nzTitle="Finished Exam!" nzSubTitle="Core: {{result.mark.toFixed(1)}}">
+            <div nz-result-extra>
+                <button nz-button nzType="primary" (click)="onRedirect()">Go Back Home</button>
+            </div>
+        </nz-result>
+        <ng-template #modalFooter>
+        </ng-template>
+    </nz-modal>
 </div>
 
 <tp-footer>

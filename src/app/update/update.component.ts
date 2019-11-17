@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
@@ -7,11 +8,11 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { User } from '../core/user.model';
 
 @Component({
-  selector: 'page-user',
-  templateUrl: 'user.component.html',
-  styleUrls: ['user.component.scss']
+  selector: 'app-update',
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UpdateComponent implements OnInit {
 
   user: User = new User()
   profileForm = new FormGroup({
@@ -36,6 +37,7 @@ export class UserComponent implements OnInit {
       if (data) {
         this.user = await this.getProfile(data.uid)
         console.log(this.user);
+        this.createForm(this.user)
       }
     })
   }
@@ -44,10 +46,10 @@ export class UserComponent implements OnInit {
     return await this.userService.getUserProfile(uid)
   }
 
-  createForm() {
+  createForm(user) {
     this.profileForm = new FormGroup({
-      studentId: new FormControl(),
-      name: new FormControl()
+      studentId: new FormControl(user.studentId),
+      name: new FormControl(user.displayName)
     })
   }
 
@@ -55,7 +57,7 @@ export class UserComponent implements OnInit {
     this.userService.updateCurrentUser(this.user, value)
       .then(async res => {
         console.log(res, 'thanh cong')
-        this.user = await this.getProfile(localStorage.getItem('uid'))
+        window.location.href = '/user'
       }, err => console.log(err, 'loi'))
   }
 

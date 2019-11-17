@@ -7,6 +7,10 @@ import { UserService } from '../core/user.service';
 import { User } from '../core/user.model';
 import { Route } from '@angular/router';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzResultModule } from 'ng-zorro-antd/result';
+
+
 @Component({
   selector: 'app-exam',
   templateUrl: './exam.component.html',
@@ -14,7 +18,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 })
 export class ExamComponent implements OnInit {
   user: User = new User();
-
+  isSubmitted = false
   isEdit;
   h = 1;
   m = 30;
@@ -23,6 +27,11 @@ export class ExamComponent implements OnInit {
   subjectName
   config: any;
   list: any;
+  result = {
+    mark: 0,
+    trueAnswer: 0,
+    answered: 0
+  }
 
   constructor(
     public authService: AuthService,
@@ -33,6 +42,15 @@ export class ExamComponent implements OnInit {
       itemsPerPage: 3,
       currentPage: 1,
     }
+  }
+
+  showModal(): void {
+    this.isSubmitted = true;
+  }
+
+  onRedirect(): void {
+    console.log('Button ok clicked!');
+    window.location.href = '/index'
   }
 
   start() {
@@ -59,7 +77,6 @@ export class ExamComponent implements OnInit {
     }, 1000);
 
     this.isEdit = true
-    console.log(this.h + ':' + this.m + ':' + this.s);
 
   }
   stop() {
@@ -112,26 +129,24 @@ export class ExamComponent implements OnInit {
   }
 
   onChoose(answerId, questionId) {
-    this.list.find(question => question.Id === questionId)._answerId = answerId
+    console.log('-----===-=-=-=-==', answerId);
+    const current = this.list.find(question => question.Id === questionId)
+    if (!current._answerId) {
+      this.result.answered += 1
+    }
+    current._answerId = answerId
   }
 
   submit() {
-    console.log('------==-==--', this.list);
-    let result = {
-      mark: 0,
-      trueAnswer: 0,
-      answered: 0
-    }
     this.list.map(question => {
       if (question._answerId) {
-        result.answered += 1
         if (question._answerId === question.AnswerId) {
-          result.mark += question.Marks
-          result.trueAnswer += 1
+          this.result.mark += question.Marks
+          this.result.trueAnswer += 1
         }
       }
     })
-    console.log(result.mark.toFixed(1), result.trueAnswer, result.answered);
+    this.showModal()
   }
 
 }

@@ -27,15 +27,9 @@ export class AuthService {
     })
   }
 
-  doLogin(value) {
-    return new Promise<any>((resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
-        .then(res => {
-          console.log('===dologin', value.email);
-
-          resolve(res);
-        }, err => reject(err))
-    })
+  async doLogin(value) {
+    const credential = await firebase.auth().signInWithEmailAndPassword(value.email, value.password)
+    return this.updateUserData(credential.user)
   }
 
   doLogout() {
@@ -66,16 +60,13 @@ export class AuthService {
     // email = value.email
 
     console.log("email ");
-    return this.afAuth.auth.sendPasswordResetEmail(value, { url: 'http://localhost:4200/_/core' })
+    return this.afAuth.auth.sendPasswordResetEmail(value, { url: `${window.location.origin}/login` })
 
     // console.log("====== sucess", value);
 
     // firebase.auth().sendPasswordResetEmail(value,
     //   { url: 'http://localhost:4200/_/core' })
     // document.getElementById('result').innerHTML = "Thành công! Một liên kết đặt lại mật khẩu đã gữi đến email của bạn."
-
-
-
 
   }
 

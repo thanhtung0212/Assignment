@@ -32,7 +32,6 @@ export class UserService {
     console.log('---- update', value)
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`,
-
     )
     const data: User = {
       uid: user.uid,
@@ -40,7 +39,6 @@ export class UserService {
       displayName: value.name,
       photoURL: user.photoURL,
       studentId: value.studentId,
-
     }
     return userRef.set(data, { merge: true })
   }
