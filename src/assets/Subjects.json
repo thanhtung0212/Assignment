@@ -3,8 +3,8 @@
         "Id": "ADAV",
         "Name": "Lập trình Android nâng cao",
         "Logo": "../../assets/images/ADAV.jpg",
-        "start_time": "17/11/2019 09:30",
-        "end_time": "17/11/2019 12:30"
+        "start_time": "1/11/2019 09:30",
+        "end_time": "30/11/2019 12:30"
     },
     {
         "Id": "ADBS",
@@ -31,8 +31,8 @@
         "Id": "ASNE",
         "Name": "Lập trình ASP.NET",
         "Logo": "../../assets/images/ASNE.png",
-        "start_time": "18/11/2019 09:30",
-        "end_time": "18/11/2019 12:30"
+        "start_time": "1/11/2019 09:30",
+        "end_time": "30/11/2019 12:30"
     },
     {
         "Id": "CLCO",
@@ -59,8 +59,8 @@
         "Id": "GAME",
         "Name": "Lập trình game 2D",
         "Logo": "../../assets/images/GAME.png",
-        "start_time": "22/11/2019 09:30",
-        "end_time": "22/11/2019 12:30"
+        "start_time": "1/11/2019 09:30",
+        "end_time": "30/11/2019 12:30"
     },
     {
         "Id": "HTCS",

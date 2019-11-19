@@ -87,6 +87,7 @@ export class ExamComponent implements OnInit {
   }
   ngOnInit() {
 
+
     this.router.data.subscribe(async routerData => {
       let data = routerData['data']
       if (data) {
