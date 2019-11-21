@@ -23,11 +23,11 @@
             </div>
         </div>
 
-        <div class="text-center">
-            <div class="float-left">
+        <div class="text-center row ">
+            <div class="float-left col-md-3">
                 Showing {{config.currentPage}} of {{subject.length/config.itemsPerPage | number:"1.0-0" }}
             </div>
-            <div class="mt-2">
+            <div class=" col-md-8">
                 <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
             </div>
 

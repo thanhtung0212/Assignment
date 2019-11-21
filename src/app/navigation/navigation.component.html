@@ -6,7 +6,7 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand ml-5 text-center" routerLink="/index">
+                <a class="navbar-brand ml-5 text-center" (click)="setTitle('Chọn môn thi')" routerLink="/index">
                     <img src="https://test365.vn/templates/as002057/images/logo.png" alt=""
                         style="width:100px; margin-left: 20px"></a>
             </div>
@@ -38,15 +38,15 @@
                             <a class="dropdown-item" [routerLink]="['/signin']"
                                 routerLinkActive="router-link-active">Sign In</a> -->
                             <a class="dropdown-item" [routerLink]="['/changepassword']"
-                                routerLinkActive="router-link-active">
+                                routerLinkActive="router-link-active" (click)="setTitle('Đổi mật khẩu')">
                                 Change
                                 Password</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" [routerLink]="['/update']"
-                                routerLinkActive="router-link-active">Update
+                            <a class="dropdown-item" href="#" (click)="setTitle('Update About')"
+                                [routerLink]="['/update']" routerLinkActive="router-link-active">Update
                                 Information</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" (click)="logout()">Log out</a>
+                            <a class="dropdown-item" (click)="logout('Log in')">Log out</a>
                         </div>
                     </li>
 

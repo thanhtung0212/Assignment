@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router'
 import { User } from 'core/user.model';
 import { Location } from "@angular/common"
 import { error } from '@ant-design/icons-angular';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'navigation',
   templateUrl: './navigation.component.html',
@@ -17,7 +18,8 @@ export class NavigationComponent implements OnInit {
     public authservice: AuthService,
     public userService: UserService,
     private router: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private titleService: Title
   ) { }
 
   ngOnInit() {
@@ -31,14 +33,19 @@ export class NavigationComponent implements OnInit {
     })
 
   }
-  logout() {
+  logout(newTitle: string) {
     this.authservice.doLogout()
       .then((res) => {
-        this.location.back();
+        this.titleService.setTitle(newTitle)
+        window.location.href = '/login'
       }, (error) => {
         console.log("Logout error", error);
       });
   }
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle)
+    console.log(newTitle);
 
+  }
 }
 

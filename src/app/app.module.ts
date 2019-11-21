@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser'
+import { BrowserModule, Title } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module'
@@ -82,7 +82,7 @@ registerLocaleData(vi)
 
     ], { enableTracing: true }),
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard, { provide: NZ_I18N, useValue: vi_VN, }],
+  providers: [AuthService, UserService, UserResolver, AuthGuard, Title, { provide: NZ_I18N, useValue: vi_VN, }],
 
   bootstrap: [AppComponent]
 })
